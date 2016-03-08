@@ -1,3 +1,4 @@
+BDIR=bin
 IDIR=include
 ODIR=obj
 LDIR=lib
@@ -8,18 +9,21 @@ CFLAGS=-I$(IDIR)
 
 LIBS=
 
-_DEPS=serialio.h
+_DEPS=regoComm.h regoSerialIO.h
 DEPS=$(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ=regotest.o serialio.o
+_OBJ=regoClient.o regoComm.o regoSerialIO.o
 OBJ=$(patsubst %,$(ODIR)/%,$(_OBJ))
 
 $(ODIR)/%.o: $(SDIR)/%.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
-bin/regotest: $(OBJ)
+$(BDIR)/regoClient: $(OBJ)
 	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
 
+install:
+	scp $(BDIR)/regoClient root@heat:
+
 clean:
-	rm -f bin/regotest $(ODIR)/*.o
+	rm -f $(BDIR)/regoClient $(ODIR)/*.o
 
