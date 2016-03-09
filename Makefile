@@ -16,9 +16,11 @@ _OBJ=regoClient.o regoComm.o regoSerialIO.o
 OBJ=$(patsubst %,$(ODIR)/%,$(_OBJ))
 
 $(ODIR)/%.o: $(SDIR)/%.c $(DEPS)
+	mkdir -p $(ODIR)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 $(BDIR)/regoClient: $(OBJ)
+	mkdir -p $(BDIR)
 	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
 
 install:
