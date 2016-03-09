@@ -1,0 +1,5 @@
+initiate-vars.sh
+*~
+bin/*
+obj/*
+
