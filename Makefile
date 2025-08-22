@@ -29,3 +29,9 @@ install:
 clean:
 	rm -f $(BDIR)/regoClient $(ODIR)/*.o
 
+.PHONY: test
+test: tests/test_serialio
+	./tests/test_serialio
+
+tests/test_serialio: tests/test_serialio.c src/regoSerialIO.c src/regoComm.c
+	gcc -I$(IDIR) $^ -o $@
