@@ -17,7 +17,7 @@
 #define REG_TYPE_BOOL			0x1		// On = 1, Off = 0
 #define REG_TYPE_INT			0x2		// Integer value
 #define REG_TYPE_TEMP			0x3		// Temperature value in 0.1 degrees C
-#define REG_TYPE_FRAC			0x4		// Numberic value in 0.1 fractions
+#define REG_TYPE_FRAC			0x4		// Numeric value in 0.1 fractions
 
 #define REG_TYPE_MASK			0xf		// Mask for possible register types
 #define REG_TYPE_GRAPHITE	0x10	// Flag for inclusion in Graphite output
