@@ -83,7 +83,7 @@ int main (int argc, char **argv) {
 				printf("Error %d querying display.\n", retval);
 				break;
 			}
-			printf(text);
+                        printf("%s", text);
 
 		} else if (strcmp("read_register", argv[optind]) == 0) {
 			/*
