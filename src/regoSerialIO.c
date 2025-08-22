@@ -136,8 +136,8 @@ void encodeInt(char* buffer, int16_t number) {
 }
 
 /*
- * Decode 40 character text buffer from a packet onto a text buffer
- * Returns number of bytes encoded in the text buffer, incluring trailing null char
+ * Decode 20 characters from a 40-byte packet into a text buffer
+ * Returns the byte count including newline and null terminator
  * This needs to be used! 20 characters _may_ take up more than 22 bytes!
  */
 uint8_t decodeText(char* buffer, char* text) {
