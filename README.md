@@ -1,5 +1,26 @@
 # regoClient
-Client software for Serial communication to heatpump controllers based on the Rego6XX control unit
+
+Client software for serial communication with heat-pump controllers based on the Rego6XX control unit.
+
+## Project structure
+
+The repository is organised into a few small directories:
+
+- `src/` – command-line client and helper libraries for the protocol and serial I/O.
+- `include/` – header files shared between modules.
+- `tests/` – unit tests for low-level serial packet helpers.
+
+## Usage
+
+The `regoClient` binary communicates with the controller over a serial port. It can read individual registers, dump known register ranges or display the controller's LCD contents. Run the program without arguments to see a full list of commands and options.
 
 ## Building
-The Makefile is currently setup for cross-compilation onto a router running OpenWRT. For the compile to work, you need the OpenWRT Toolchain. Before running the Makefile, make sure you set the `PATH` and `STAGING_DIR` environment variables to match the location of the staging dir in your cross-compilation toolchain.
+
+The Makefile is configured for cross-compiling to an OpenWRT router. Before running `make`, set the `PATH` and `STAGING_DIR` environment variables to point at your OpenWRT toolchain.
+
+To build and run the tests on a development machine:
+
+```sh
+make test
+```
+
