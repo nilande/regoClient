@@ -79,11 +79,11 @@ int main (int argc, char **argv) {
 			 */
 			char text[170]; 			// 21 chars x 4 rows in UTF-8 = 170 bytes to be safe
 			retval = queryDisplay(text);
-			if (retval < 0) {
-				printf("Error %d querying display.\n", retval);
-				break;
-			}
-			printf(text);
+                        if (retval < 0) {
+                                printf("Error %d querying display.\n", retval);
+                                break;
+                        }
+                        printf("%s", text);
 
 		} else if (strcmp("read_register", argv[optind]) == 0) {
 			/*

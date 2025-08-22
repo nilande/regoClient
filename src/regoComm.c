@@ -5,6 +5,7 @@
  */
 
 #include <stdio.h> /* For printf() etc */
+#include <time.h>  /* For time() */
 
 #include <regoComm.h>
 #include <regoSerialIO.h>
